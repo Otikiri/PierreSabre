@@ -43,6 +43,10 @@ public class Humain {
 		argent -= perte; 
 	}
 	
+	public void boire() {
+		parler("Mmmmm, un bon verre de "+boissonfav+"! GLOUPS!");
+	}
+	
 }
 
 
