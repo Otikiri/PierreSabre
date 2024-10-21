@@ -9,8 +9,8 @@ public class Histoire4 {
 	public static void main(String[] args) {
 		Humain prof = new Humain("Prof","Kombucha",52);
 		Commercant marco = new Commercant("Marco", "the", 15);
-		Yakuza yaku = new Yakuza("Yaku le Noir","Whiskey",30,"Warsong");
-		Ronin roro = new Ronin("Roro","shochu",60,1);
+		Yakuza yaku = new Yakuza("Yaku le Noir","Whiskey",30,"Warsong",0);
+		Ronin roro = new Ronin("Roro","shochu",60);
 		prof.direBonjour();
 		prof.acheter("Kombucha", 12);
 		prof.boire();
@@ -21,5 +21,6 @@ public class Histoire4 {
 		yaku.parler(marco.getNom()+", si tu tient a ta vie donne moi ta bourse");
 		yaku.extorquer(marco);
 		roro.donner(marco);
+		roro.provoquer(yaku);
 		}
 }
