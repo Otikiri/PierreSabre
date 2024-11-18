@@ -19,6 +19,8 @@ public class Histoire5 {
 		marco.faireConnaissanceAvec(yumi);
 		marco.faireConnaissanceAvec(chonin);
 		marco.listerConnaissance();
+		
+		yaku.parler();
 
 	}
 }

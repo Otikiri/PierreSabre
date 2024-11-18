@@ -4,7 +4,7 @@ public class Yakuza extends Humain {
 	private int reputation = 0;
 	private String clan;
 
-	public Yakuza(String nom, String boissonfav, int argent, String clan,int reputation) {
+	public Yakuza(String nom, String boissonfav, int argent, String clan, int reputation) {
 		super(nom, boissonfav, argent);
 		this.clan = clan;
 		this.reputation = reputation;
@@ -28,10 +28,16 @@ public class Yakuza extends Humain {
 		parler("J'ai perdu mon duel et mes " + argDonner + " sous,snif ... J'ai deshonore le clan de " + clan);
 		return argDonner;
 	}
-	
+
 	public void gagner(int gain) {
-		argent+= gain; 
-		parler("Ce ronin pensait vraiment battre "+super.getNom()+" du clan de "+clan+" ? Je l'ai depouille de ses "+gain+" sous!");
+		argent += gain;
+		parler("Ce ronin pensait vraiment battre " + super.getNom() + " du clan de " + clan
+				+ " ? Je l'ai depouille de ses " + gain + " sous!");
+	}
+
+	public void parler() {
+		System.out.println("(" + this.getNom() + ")" + " - Bonjour je m'appelle " + this.getNom() + " et j'aime boire du "+ this.getBoissonfav());
+		System.out.println("(" + this.getNom() + ")" + " - Mon clan est celui de "+clan);
 	}
 
 }
