@@ -1,8 +1,12 @@
 package personnages;
 
+
 public class Humain {
+	private static int NB_MEM_MAX = 30; 
 	private String nom;
 	private String boissonfav;
+	private int nb_connaissance = 0;
+	private Humain[] connaissance = new Humain[NB_MEM_MAX];
 	protected int argent;
 
 	public Humain(String nom, String boissonfav, int argent) {
@@ -47,6 +51,30 @@ public class Humain {
 		parler("Mmmmm, un bon verre de "+boissonfav+"! GLOUPS!");
 	}
 	
+	private void memoriser(Humain homme) {
+		if (nb_connaissance < NB_MEM_MAX) {
+			connaissance[nb_connaissance] = homme;
+			nb_connaissance ++; 
+		}	
+		else {
+			parler("Je connait deja trop de personnes!");
+		}
+	}
+	
+	public void faireConnaissanceAvec(Humain homme2) {
+		direBonjour(); 
+		homme2.direBonjour();
+		homme2.memoriser(this);
+		memoriser(homme2);
+
+		
+	}
+	public void listerConnaissance() {
+		parler("Je connais beaucoup de monde dont : ");
+		for (int i = 0; i <nb_connaissance; i++) {
+			System.out.println("-"+connaissance[i].nom);
+		}
+	}
 }
 
 
