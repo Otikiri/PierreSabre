@@ -35,9 +35,11 @@ public class Yakuza extends Humain {
 				+ " ? Je l'ai depouille de ses " + gain + " sous!");
 	}
 
-	public void parler() {
-		System.out.println("(" + this.getNom() + ")" + " - Bonjour je m'appelle " + this.getNom() + " et j'aime boire du "+ this.getBoissonfav());
-		System.out.println("(" + this.getNom() + ")" + " - Mon clan est celui de "+clan);
+	@Override 
+	public void direBonjour() {
+		parler("Bonjour! Je m'appelle " + this.nom + " et j'aime boire du " + this.boissonfav);
+		parler("Mon clan est celui de "+clan);
 	}
+
 
 }

@@ -2,10 +2,10 @@ package personnages;
 
 public class Humain {
 	private static int NB_MEM_MAX = 3;
-	private String nom;
-	private String boissonfav;
-	private int nb_connaissance = 0;
-	private Humain[] connaissance = new Humain[NB_MEM_MAX];
+	protected String nom;
+	protected String boissonfav;
+	protected int nb_connaissance = 0;
+	protected Humain[] connaissance = new Humain[NB_MEM_MAX];
 	protected int argent;
 
 	public Humain(String nom, String boissonfav, int argent) {
@@ -20,6 +20,9 @@ public class Humain {
 
 	public String getBoissonfav() {
 		return boissonfav;
+	}
+	public int getArgent() {
+		return argent;
 	}
 
 	public void parler(String texte) {
